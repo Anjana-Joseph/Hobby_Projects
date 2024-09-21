@@ -38,8 +38,9 @@ This project is a Password Generator application built using Tkinter, a standard
 
 ## Example
 
-Input: Length = 12, select "Include Uppercase Letters", "Include Digits", and "Include Special Characters".
+```bash
+python password_generator.py
 
-Output: Generated password is displayed with a yellow highlight, for example:
-
+#Input: Length = 12, select "Include Uppercase Letters", "Include Digits", and "Include Special Characters".
+#Output: Generated password is displayed with a yellow highlight, for example:
     Generated Password: X7#D9L!p2*Jq

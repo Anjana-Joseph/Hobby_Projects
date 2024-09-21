@@ -4,7 +4,7 @@ This project is a Password Generator application built using Tkinter, a standard
 
 ## How to Run
 
-1. Navigate to the task directory (codsoft_taskno.3):
+1. Navigate to the task directory (`codsoft_taskno.3`):
    
     ```bash
    cd codsoft_taskno.3

@@ -5,18 +5,24 @@ This project is a Password Generator application built using Tkinter, a standard
 ## How to Run
 
 1. Navigate to the task directory (codsoft_taskno.3):
+   
+    ```bash
+   cd codsoft_taskno.3
+    ```
 
-    cd codsoft_taskno.3
-
-2. Run the Python script by executing the following command in your terminal or command prompt:
-
+3. Run the Python script by executing the following command in your terminal or command prompt:
+   
+    ```bash
     python password_generator.py
-
+    ```
+    
    or, if you're using Python 3:
 
+    ```bash
     python3 password_generator.py
+    ```
 
-3. The password generator window will open, where you can enter the desired password length, select the complexity options, and generate a password.
+5. The password generator window will open, where you can enter the desired password length, select the complexity options, and generate a password.
 
 ## Features
 

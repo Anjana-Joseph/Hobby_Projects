@@ -2,7 +2,7 @@
 
 This project is a Password Generator application built using Tkinter, a standard Python library for creating Graphical User Interfaces (GUIs). The application allows users to specify the length and complexity of the password, and generates a random, strong password based on the user's input.
 
-# Features
+## Features
 
 - User Input: The user can specify the length of the password.
 - Complexity Options:
@@ -13,7 +13,7 @@ This project is a Password Generator application built using Tkinter, a standard
 - Clear Button: Clear the current password and reset the input fields.
 - Graphical User Interface: Easy-to-use GUI with checkboxes and buttons.
 
-# How to Run
+## How to Run
 
 1. Navigate to the task directory (codsoft_taskno.3):
 
@@ -29,7 +29,7 @@ This project is a Password Generator application built using Tkinter, a standard
 
 3. The password generator window will open, where you can enter the desired password length, select the complexity options, and generate a password.
 
-# Example
+## Example
 
 Input: Length = 12, select "Include Uppercase Letters", "Include Digits", and "Include Special Characters".
 

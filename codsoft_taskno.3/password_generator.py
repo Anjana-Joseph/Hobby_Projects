@@ -3,7 +3,7 @@ from tkinter import messagebox
 import random
 import string
 
-# Function to generate the password based on user input
+# Function to generate the password based on the selected strength
 def generate_password():
     try:
         # Get the desired password length from the user
@@ -11,22 +11,20 @@ def generate_password():
         if length < 1:
             raise ValueError
 
-        # Initialize an empty string for possible characters based on user selection
+        # Initialize an empty string for possible characters
         characters = ""
 
-        # Add character types based on user selection
-        if var_uppercase.get():
-            characters += string.ascii_uppercase
-        if var_lowercase.get():
-            characters += string.ascii_lowercase
-        if var_digits.get():
-            characters += string.digits
-        if var_symbols.get():
-            characters += string.punctuation
+        # Add character types based on the selected strength
+        strength = var_strength.get()
 
-        # If no character types are selected, raise an error
-        if not characters:
-            raise ValueError("Please select at least one character type.")
+        if strength == 1:  # Weak: Only lowercase letters
+            characters = string.ascii_lowercase
+        elif strength == 2:  # Medium: Lowercase letters and digits
+            characters = string.ascii_lowercase + string.digits
+        elif strength == 3:  # Strong: Lowercase, uppercase, digits, and special characters
+            characters = string.ascii_letters + string.digits + string.punctuation
+        else:
+            raise ValueError("Please select a password strength.")
 
         # Generate a random password
         password = ''.join(random.choice(characters) for _ in range(length))
@@ -52,35 +50,32 @@ label_title = tk.Label(root, text="Password Generator", font=("Arial", 18, "bold
 label_title.pack(pady=10)
 
 # Label for password length input
-label_length = tk.Label(root, text="Enter Password Length:", font=("Arial", 12), bg="light blue")
+label_length = tk.Label(root, text="Enter Password Length:", font=("Arial", 12, "bold"), bg="light blue")
 label_length.pack()
 
 # Entry widget for user to input the desired password length
 entry_length = tk.Entry(root, font=("Arial", 12))
 entry_length.pack(pady=5)
 
-# Options for password complexity (checkboxes)
-label_complexity = tk.Label(root, text="Select Password Complexity:", font=("Arial", 12), bg="light blue")
-label_complexity.pack(pady=5)
+# Label for password strength selection
+label_strength = tk.Label(root, text="Select Password Strength:", font=("Arial", 12, "bold"), bg="light blue")
+label_strength.pack(pady=5)
 
-# Boolean variables to track the state of each checkbox
-var_uppercase = tk.BooleanVar()
-var_lowercase = tk.BooleanVar()
-var_digits = tk.BooleanVar()
-var_symbols = tk.BooleanVar()
+# Radio buttons for password strength selection
+var_strength = tk.IntVar()
+var_strength.set(0)  # Default is none selected
 
-# Checkbuttons for each character type
-chk_uppercase = tk.Checkbutton(root, text="Include Uppercase Letters", font=("Arial", 12), bg="light blue", variable=var_uppercase)
-chk_uppercase.pack()
+# Radio button for weak password
+radio_weak = tk.Radiobutton(root, text="Weak (Lowercase Letters)", variable=var_strength, value=1, font=("Arial", 12), bg="light blue")
+radio_weak.pack()
 
-chk_lowercase = tk.Checkbutton(root, text="Include Lowercase Letters", font=("Arial", 12), bg="light blue", variable=var_lowercase)
-chk_lowercase.pack()
+# Radio button for medium password
+radio_medium = tk.Radiobutton(root, text="Medium (Lowercase + Digits)", variable=var_strength, value=2, font=("Arial", 12), bg="light blue")
+radio_medium.pack()
 
-chk_digits = tk.Checkbutton(root, text="Include Digits", font=("Arial", 12), bg="light blue", variable=var_digits)
-chk_digits.pack()
-
-chk_symbols = tk.Checkbutton(root, text="Include Special Characters", font=("Arial", 12), bg="light blue", variable=var_symbols)
-chk_symbols.pack()
+# Radio button for strong password
+radio_strong = tk.Radiobutton(root, text="Strong (Letters + Digits + Symbols)", variable=var_strength, value=3, font=("Arial", 12), bg="light blue")
+radio_strong.pack()
 
 # Label to display the generated password with background highlight
 label_password = tk.Label(root, text="Generated Password: ", font=("Arial", 12, "bold"), bg="light blue")

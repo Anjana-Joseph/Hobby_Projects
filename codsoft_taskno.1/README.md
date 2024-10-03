@@ -1,4 +1,4 @@
-# CODSOFT Task 1: Calculator
+# 1: Calculator
 
 This task is a simple calculator application built using Tkinter, a standard Python library for creating Graphical User Interfaces (GUIs). The calculator performs basic arithmetic operations like addition, subtraction, multiplication, and division.
 

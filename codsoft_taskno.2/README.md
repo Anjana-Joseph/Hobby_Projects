@@ -1,4 +1,4 @@
-# CODSOFT Task 2: Rock-Paper-Scissors
+# 2: Rock-Paper-Scissors
 
 This task is a Rock-Paper-Scissors game application built using Tkinter, a standard Python library for creating Graphical User Interfaces (GUIs). The game allows the user to play Rock-Paper-Scissors against the computer and keeps track of the score.
 

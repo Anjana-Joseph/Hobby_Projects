@@ -1,4 +1,4 @@
-# CODSOFT Task 3: Password Generator
+# 3: Password Generator
 
 This project is a Password Generator application built using Tkinter, a standard Python library for creating Graphical User Interfaces (GUIs). The application allows users to specify the length and complexity of the password, and generates a random, strong password based on the user's input.
 
